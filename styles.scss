@@ -1,3 +1,7 @@
+//////////////////////////////////////////////////////////////
+///////////////////////// VARIABLES //////////////////////////
+//////////////////////////////////////////////////////////////
+
 $size-Mobile: 375px;
 $size-Desktop: 1440px;
 
@@ -26,16 +30,36 @@ $typ-Font-size: 13px;
 // - Weights: 500, 600
 
 * {
-    margin: 0px;
-    padding: 0px;
+    // se comentan los margenes en cero por que se está utilizando nromalize.cc
+    // margin: 0px;
+    // padding: 0px;
     box-sizing: border-box;
     font-size: $typ-Font-size;
     font-family: "Barlow Semi Condensed", sans-serif;
 }
 
+//////////////////////////////////////////////////////////////
+///////////////////////// ELEMENTOS //////////////////////////
+//////////////////////////////////////////////////////////////
+
 body {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-Light-grayish-blue;
+}
+#container {
+    width: 82%;
+    height: 82%;
+    // padding: 120px;
     display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    // grid-template-columns: repeat(4, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+    gap: 25px;
 }
 .card {
     background-color: $color-Moderate-violet;
@@ -63,11 +87,13 @@ body {
         }
         .card-name {
             font-weight: 600;
-            letter-spacing: 0.1rem;
+            letter-spacing: 0.07rem;
+            line-height: 0px;
         }
     }
     .card-verification {
         color: rgba($color: $color-White, $alpha: 0.5);
+        line-height: 0px;
     }
     .card-main {
         font-size: 1.3rem;
@@ -83,34 +109,69 @@ body {
 #daniel {
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
+
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
 }
 #jhonathan {
     grid-row: 1 / span 1;
     grid-column: 3 / span 1;
+    background-color: $color-Very-dark-grayish-blue;
 }
 #jeanette {
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
+    background-color: $color-White;
+
+    #jeanette-header {
+        h3 {
+            color: $color-Very-dark-grayish-blue;
+        }
+        p {
+            color: rgba($color-Very-dark-grayish-blue, 0.5);
+        }
+    }
+    #jeanette-main {
+        color: $color-Very-dark-grayish-blue;
+    }
+    #jeanette-text {
+        color: rgba($color-Very-dark-grayish-blue, 0.7);
+    }
 }
 #patrick {
     grid-row: 2 / span 1;
     grid-column: 2 / span 2;
+    background-color: $colro-Very-dark-blackish-blue;
+
+    #jeanette-header {
+        h3 {
+            color: $color-Very-dark-grayish-blue;
+        }
+        p {
+            color: rgba($color: $color-Very-dark-grayish-blue, $alpha: 0.5);
+        }
+    }
 }
 #kira {
     grid-row: 1 / span 2;
     grid-column: 4 / span 1;
-}
+    background-color: $color-White;
 
-#container {
-    width: 100%;
-    height: 100vh;
-    padding: 120px;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-    gap: 25px;
+    #kira-header {
+        h3 {
+            color: $color-Very-dark-grayish-blue;
+        }
+        p {
+            color: rgba($color: $color-Very-dark-grayish-blue, $alpha: 0.5);
+        }
+    }
+    #kira-main {
+        color: $color-Very-dark-grayish-blue;
+    }
+    #kira-text {
+        color: rgba($color: $color-Very-dark-grayish-blue, $alpha: 0.7);
+    }
 }
 
 .attribution {
@@ -119,4 +180,42 @@ body {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+//////////////////////////////////////////////////////////////////
+///////////////////////// MEDIA QUERIES //////////////////////////
+//////////////////////////////////////////////////////////////////
+
+@media screen and (orientation: portrait) and (max-width: 375px) {
+    #container {
+        padding: 20px;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: minmax(220px, 1fr);
+    }
+    .card {
+        .card-main {
+            font-size: 1.5rem;
+        }
+    }
+
+    #daniel {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+    #jhonathan {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+    #jeanette {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+    }
+    #patrick {
+        grid-row: 4 / span 1;
+        grid-column: 1 / span 1;
+    }
+    #kira {
+        grid-row: 5 / span 1;
+        grid-column: 1 / span 1;
+    }
 }
