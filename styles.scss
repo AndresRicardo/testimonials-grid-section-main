@@ -188,7 +188,7 @@ body {
 
 @media screen and (orientation: portrait) and (max-width: 375px) {
     #container {
-        padding: 20px;
+        padding-top: 15%;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: minmax(220px, 1fr);
     }
