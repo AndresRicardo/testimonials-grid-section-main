@@ -16,8 +16,6 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 -   [Author](#author)
 -   [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 This challenge was made using just HTML and CSS (SASS, Flexbox, CSS Grid), but thinking in desktop first.
